@@ -1,20 +1,30 @@
 # Regex Workshop
 
-In this workshop we will learn how to write Regular Expressions to match many different usages.
+In this workshop we will learn how to write Regular Expressions to match many different patterns.
 
-## Step 0
+## Setup
 
-install the project (`npm i` in the root of the project).
+* Make sure you have [Node.js and NPM installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+* Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
+* Install the project (`npm i` in the root of the project).
+
+In each of the following steps, you can run the tests for the specific by running `npm t <step>`. Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`. In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
+
+You can also run all the steps by running `npm t` or run all tests in watch mode by running npm run `test:watch`.
+
+Now that you understand the setup we can begin.
 
 ## Step 1 - Intro
 
 A regular expression can be written between two slashes `//` or using the `RegExp` object.
 
-Example: `/w/` is a regular expression that matches all words containing the letter `w` (it can be written also as `new RegExp('w')` but we will stick with the slash notation which is less javascript specific).
+**Example:** `/w/` is a regular expression that matches all words containing the letter `w`
+
+(it can be written also as `new RegExp('w')` but we will stick with the slash notation which is less javascript specific).
 
 **Write a Regular Expression that checks if the given text contains the letter `a`.**
 
-> In `./solution.ts` file write your answer in the `answer1` exported variable and run `npm t 1` in the terminal.
+> In `./solution.ts` file write your answer in the `answer1` exported variable.
 
 In order to check that you are correct run `npm t 1` in the terminal in this project root.
 
