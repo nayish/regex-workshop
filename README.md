@@ -8,9 +8,9 @@ In this workshop we will learn how to write Regular Expressions to match many di
 * Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
 * Install the project (`npm i` in the root of the project).
 
-In each of the following steps, you can run the tests for the specific by running `npm t <step>`. Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`. In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
+In each of the following steps, you can run the tests for the specific step by running `npm t <step>`. Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`. In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
 
-You can also run all the steps by running `npm t` or run all tests in watch mode by running npm run `test:watch`. You can run them and should see 14 failing steps (since we haven't implemented any of them).
+You can also run all the steps by running `npm t` or run all tests in watch mode by running `npm run test:watch`. You can run them and should see 14 failing steps (since we haven't implemented any of them).
 
 Now that you understand the setup we can begin.
 
