@@ -1,72 +1,73 @@
 {
-  "test1": {
-    "title": "contain \"a\" (%s)",
-    "pass": ["a", "ab", "ba", "b\na"],
-    "fail": ["", "bbb", "cbccb", "b\nc"]
-  },
-  "test2": {
-    "title": "start with \"m\" (%s)",
-    "pass": ["m", "mab", "m ba", "m\na"],
-    "fail": ["", "bmbb", "cbccbm", "b\nm"]
-  },
-  "test3": {
-    "title": "end line with number (%s)",
-    "pass": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 0\nasdasd"],
-    "fail": ["", "1asd", "asda\n1sfsdf", "b\n1asdasd\n121313df"]
-  },
-  "test4": {
-    "title": "be valid israeli cell number (%s)",
-    "pass": ["052-000-0000", "053-452-1234", "056-999-9999"],
-    "fail": ["0121313131", "052-123-123", "123-123-1234", "123-121", "050-123-123A"]
-  },
-  "test5": {
-    "title": "contain \"guy varzager\" or \"guy segev\" (%s)",
-    "pass": ["guy varzager has too many gifs", "guy segev", "guy segev & guy varzager"],
-    "fail": ["guy warzager has too many gifs", "guy segzager", "moo", "var", "Guy!", "segev guy", "segev varzager"]
-  },
-  "test6": {
-    "title": "be word of length at least 3 and at most 10 or number of length 3 (%s)",
-    "pass": ["abc", "maSksmdkas", "worry", "great","123", "934"],
-    "fail": ["", "ab", "abcabcabcab", "021", "abc1b", "123a", "1", "004"]
-  },
-  "test7": {
-    "title": "have a line that is a word starting with x or X ending with q or Q and all other chars are c or C (%s)",
-    "pass": ["xq", "xcq", "xcccccccccq", "Xccq","xCCCCCCccccccCccccccccccQ", "xCq", "moo\nXQ", "XcccCCCcCCCcq\nqcx"],
-    "fail": ["x Cq", "xc", "cq", "qqqqq", "q", "", "qcxx", "qxxxxxxxxc", "moo xq", "a\nqcx\nb"]
-  },
-  "test8": {
-    "title": "contain an even number of \"g\"s in a row (%s)",
-    "pass": ["gg", "gggg", "gggggg", "a gggggggg","a gg nvs vs 123 4124 bdfbg"],
-    "fail": ["g", "ggg", "123 sfs ggggg 123", "g1g1g1"]
-  },
-  "test9": {
-    "title": "have three matching chars (%s)",
-    "pass": ["aaa", "abcdefghijklmnopqrstuvwxyzyzy", "a@kpoq@>@", "abc\ndef\nghi\njkl", "WubbaLubaDubDub"],
-    "fail": ["abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "*%@@", "!%mMM", "AaABbBCcC", "Rick and Morty", ""]
-  },
-  "test10": {
-    "title": "be number with the digit 5 at least once and only odd digits (%s)",
-    "pass": ["1333377795", "5", "51", "75", "55555", "95999931959", "13799999733319975"],
-    "fail": ["a", "a5", "5 ", " 5", "1", "137137173739", "25", "5899999999"]
-  },
-  "test11": {
-    "title": "have no chars more than once in a row (%s)",
-    "pass": ["abcab", "*&*", "!%mM", "AcAcAC", "Rick and Morty", ""],
-    "fail": ["  ", "opopopopopopoplla asdasd asdas", "zz", "tytyt**t", "Wubba Luba Dub Dub", "1\t\t9"]
-  },
-  "test12": {
-    "title": "be valid password with at least 1 lower case letter one upper case one number and a special char length 8 to 16 (%s)",
-    "pass": ["Password1!", "A1@cd8k!", "AbCd12#4", "AbCd12#4AbCd12$4"],
-    "fail": ["Pa1!", "Password!", "Password1", "Password1!Passwor"]
-  },
-  "test13": {
-    "title": "be 4-5 letter polyndrom (%s)",
-    "pass": ["abcba", "jjjjj", "klolk", "zkmkz", "abba", "noon"],
-    "fail": ["abcab", "aba", "aaaaaaa", "abcde", "ababab", "abbac"]
-  },
-  "test14": {
-    "title": "be x prime number of times in a row (%s)",
-    "pass": ["xx", "xxx", "xxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
-    "fail": ["xxxx", "xxxxxx", "xxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
-  }
+ "steps": [
+   {
+      "title": "contain \"a\"",
+      "pass": ["a", "ab", "ba", "b\na"],
+      "fail": ["", "bbb", "cbccb", "b\nc"]
+    },
+    {
+      "title": "start with \"m\"",
+      "pass": ["m", "mab", "m ba", "m\na"],
+      "fail": ["", "bmbb", "cbccbm", "b\nm"]
+    },
+    {
+      "title": "end line with number",
+      "pass": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 0\nasdasd"],
+      "fail": ["", "1asd", "asda\n1sfsdf", "b\n1asdasd\n121313df"]
+    },
+     {
+      "title": "be valid israeli cell number",
+      "pass": ["052-000-0000", "053-452-1234", "056-999-9999"],
+      "fail": ["0121313131", "052-123-123", "123-123-1234", "123-121", "050-123-123A"]
+    },
+    {
+      "title": "contain \"guy varzager\" or \"guy segev\"",
+      "pass": ["guy varzager has too many gifs", "guy segev", "guy segev & guy varzager"],
+      "fail": ["guy warzager has too many gifs", "guy segzager", "moo", "var", "Guy!", "segev guy", "segev varzager"]
+    },
+    {
+      "title": "be word of length at least 3 and at most 10 or number of length 3",
+      "pass": ["abc", "maSksmdkas", "worry", "great","123", "934"],
+      "fail": ["", "ab", "abcabcabcab", "021", "abc1b", "123a", "1", "004"]
+    },
+     {
+      "title": "have a line that is a word starting with x or X ending with q or Q and all other chars are c or C",
+      "pass": ["xq", "xcq", "xcccccccccq", "Xccq","xCCCCCCccccccCccccccccccQ", "xCq", "moo\nXQ", "XcccCCCcCCCcq\nqcx"],
+      "fail": ["x Cq", "xc", "cq", "qqqqq", "q", "", "qcxx", "qxxxxxxxxc", "moo xq", "a\nqcx\nb"]
+    },
+     {
+      "title": "contain an even number of \"g\"s in a row",
+      "pass": ["gg", "gggg", "gggggg", "a gggggggg","a gg nvs vs 123 4124 bdfbg"],
+      "fail": ["g", "ggg", "123 sfs ggggg 123", "g1g1g1"]
+    },
+    {
+      "title": "have three matching chars",
+      "pass": ["aaa", "abcdefghijklmnopqrstuvwxyzyzy", "a@kpoq@>@", "abc\ndef\nghi\njkl", "WubbaLubaDubDub"],
+      "fail": ["abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "*%@@", "!%mMM", "AaABbBCcC", "Rick and Morty", ""]
+    },
+    {
+      "title": "be number with the digit 5 at least once and only odd digits",
+      "pass": ["1333377795", "5", "51", "75", "55555", "95999931959", "13799999733319975"],
+      "fail": ["a", "a5", "5 ", " 5", "1", "137137173739", "25", "5899999999"]
+    },
+     {
+      "title": "have no chars more than once in a row",
+      "pass": ["abcab", "*&*", "!%mM", "AcAcAC", "Rick and Morty", ""],
+      "fail": ["  ", "opopopopopopoplla asdasd asdas", "zz", "tytyt**t", "Wubba Luba Dub Dub", "1\t\t9"]
+    },
+     {
+      "title": "be valid password with at least 1 lower case letter one upper case one number and a special char length 8 to 16",
+      "pass": ["Password1!", "A1@cd8k!", "AbCd12#4", "AbCd12#4AbCd12$4"],
+      "fail": ["Pa1!", "Password!", "Password1", "Password1!Passwor"]
+    },
+     {
+      "title": "be 4-5 letter polyndrom",
+      "pass": ["abcba", "jjjjj", "klolk", "zkmkz", "abba", "noon"],
+      "fail": ["abcab", "aba", "aaaaaaa", "abcde", "ababab", "abbac"]
+    },{
+      "title": "be x prime number of times in a row",
+      "pass": ["xx", "xxx", "xxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
+      "fail": ["xxxx", "xxxxxx", "xxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
+    }
+ ]
 }
