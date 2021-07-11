@@ -4,24 +4,48 @@ In this workshop we will learn how to write Regular Expressions to match many di
 
 ## Setup
 
+The Workshop can be done in either Javscript or Scala, the differences are very minor so pick what best suites you.
+
 ### Javascript Setup
 * Make sure you have [Node.js and NPM installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 * Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
 * Install the project (`npm i` in the root of the project).
 
-In each of the following steps, you can run the tests for the specific step by running `npm t <step>`. Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`. In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
+#### Running all tests
+You can run all the steps by running `npm t` or run all tests in watch mode by running `npm run test:watch`.
 
-You can also run all the steps by running `npm t` or run all tests in watch mode by running `npm run test:watch`. You can run them and should see 14 failing steps (since we haven't implemented any of them).
+* Run them, and should see 14 failing steps (since we haven't implemented any of them).
+
+#### Running specific step test
+You can run the tests for a specific step by running `npm t <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
+
+* Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`.
 
 ### Scala Setup
 
-TODO: fill in how to install
+* Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
+* Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
+* Click `Open As Project`
+* Click `Trust Project` 
 
-You can run the tests for all the steps by running `src/test/scala/test/Test.scala`. Run them, and you should see 14 failing steps (since we haven't implemented any of them).
+> This may take a few minutes (~2m)
 
-You can run the tests for a specific step by editing the test configuration and setting `Program arguments` to be the `<step>`. Try it now on step 1 (`Program arguments: "1"`), and you should get one failing test `should have answer for step 1`. In order to solve a step you need to enter a Regex in the appropriate answer value in `./src/main/scala/solution/Solution.scala`.
+#### Running all tests
+You can run the tests for all the steps by running `src/test/scala/test/Test.scala`.
 
-Now that you understand the setup we can begin.
+* Run them, and you should see 14 failing steps (since we haven't implemented any of them)
+
+#### Running specific step test
+You can run the tests for a specific step by editing the test configuration and setting `Program arguments` to be the `<step>`.  In order to solve a step you need to enter a Regex in the appropriate answer value in `./src/main/scala/solution/Solution.scala`.
+
+
+<img src="https://static.wixstatic.com/media/7c303e_dae05de3941e47759a690e94f8fbd4eb~mv2.png" width="250"/>
+
+<img src="https://static.wixstatic.com/media/7c303e_daf12299c3094f3dab0b95f99157d614~mv2.png" width="350"/>
+
+* Try it now on step 1 (`Program arguments: "1"`), and you should get one failing test `should have answer for step 1`.
+
+***Now that you understand the setup we can begin.***
 
 ## Step 1 - Intro
 
