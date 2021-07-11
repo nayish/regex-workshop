@@ -53,7 +53,7 @@ A regular expression is a pattern used to check if a given text matches it.
 
 Most languages have similar patterns for Regex.
 
-In **Javascript** be write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
+In **Javascript** we write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
 
 **Example:** `/w/` is a regular expression that matches all words containing the letter `w`
 
