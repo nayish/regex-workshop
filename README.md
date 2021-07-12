@@ -16,7 +16,7 @@ The Workshop can be done in either Javscript or Scala, the differences are very 
 #### Running all tests
 You can run all the steps by running `npm t` or run all tests in watch mode by running `npm run test:watch`.
 
-* Run them, and should see 14 failing steps (since we haven't implemented any of them).
+* Run them, and you should see 14 failing steps (since we haven't implemented any of them).
 
 #### Running specific step test
 You can run the tests for a specific step by running `npm t <step>` or `npm run test:watch <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
