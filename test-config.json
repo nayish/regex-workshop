@@ -11,12 +11,12 @@
       "fail": ["", "bmbb", "cbccbm", "b\nm"]
     },
     {
-      "title": "end line with number",
+      "title": "end with number",
       "pass": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 0\nasdasd"],
       "fail": ["", "1asd", "asda\n1sfsdf", "b\n1asdasd\n121313df"]
     },
      {
-      "title": "be valid israeli cell number",
+      "title": "be valid phone number",
       "pass": ["052-000-0000", "053-452-1234", "056-999-9999"],
       "fail": ["0121313131", "052-123-123", "123-123-1234", "123-121", "050-123-123A"]
     },
@@ -26,12 +26,12 @@
       "fail": ["guy warzager has too many gifs", "guy segzager", "moo", "var", "Guy!", "segev guy", "segev varzager"]
     },
     {
-      "title": "be word of length at least 3 and at most 10 or number of length 3",
+      "title": "be word of length 3-10 or number of length 3",
       "pass": ["abc", "maSksmdkas", "worry", "great","123", "934"],
       "fail": ["", "ab", "abcabcabcab", "021", "abc1b", "123a", "1", "004"]
     },
      {
-      "title": "have a line that is a word starting with x or X ending with q or Q and all other chars are c or C",
+      "title": "contain line that starts with x or X then any amount of c or C, ending with q or Q",
       "pass": ["xq", "xcq", "xcccccccccq", "Xccq","xCCCCCCccccccCccccccccccQ", "xCq", "moo\nXQ", "XcccCCCcCCCcq\nqcx"],
       "fail": ["x Cq", "xc", "cq", "qqqqq", "q", "", "qcxx", "qxxxxxxxxc", "moo xq", "a\nqcx\nb"]
     },
@@ -41,22 +41,22 @@
       "fail": ["g", "ggg", "123 sfs ggggg 123", "g1g1g1"]
     },
     {
-      "title": "have three matching chars",
+      "title": "have three matching characters",
       "pass": ["aaa", "abcdefghijklmnopqrstuvwxyzyzy", "a@kpoq@>@", "abc\ndef\nghi\njkl", "WubbaLubaDubDub"],
       "fail": ["abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "*%@@", "!%mMM", "AaABbBCcC", "Rick and Morty", ""]
     },
     {
-      "title": "be number with the digit 5 at least once and only odd digits",
+      "title": "be number with only odd digits containing at least one 5 digit",
       "pass": ["1333377795", "5", "51", "75", "55555", "95999931959", "13799999733319975"],
       "fail": ["a", "a5", "5 ", " 5", "1", "137137173739", "25", "5899999999"]
     },
      {
-      "title": "have no chars more than once in a row",
+      "title": "have no characters more than once in a row",
       "pass": ["abcab", "*&*", "!%mM", "AcAcAC", "Rick and Morty", ""],
       "fail": ["  ", "opopopopopopoplla asdasd asdas", "zz", "tytyt**t", "Wubba Luba Dub Dub", "1\t\t9"]
     },
      {
-      "title": "be valid password with at least 1 lower case letter one upper case one number and a special char length 8 to 16",
+      "title": "be valid password",
       "pass": ["Password1!", "A1@cd8k!", "AbCd12#4", "AbCd12#4AbCd12$4"],
       "fail": ["Pa1!", "Password!", "Password1", "Password1!Passwor"]
     },
@@ -65,7 +65,7 @@
       "pass": ["abcba", "jjjjj", "klolk", "zkmkz", "abba", "noon"],
       "fail": ["abcab", "aba", "aaaaaaa", "abcde", "ababab", "abbac"]
     },{
-      "title": "be x prime number of times in a row",
+      "title": "be sequence of x's of prime length",
       "pass": ["xx", "xxx", "xxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
       "fail": ["xxxx", "xxxxxx", "xxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
     }

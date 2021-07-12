@@ -2,6 +2,8 @@
 
 In this workshop we will learn how to write Regular Expressions to match many different patterns.
 
+<img src="https://camo.githubusercontent.com/c5026835dcc420687befac8b349fb810c8cdfd4b7c9601d63b44b465561e55dc/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f726567756c61725f65787072657373696f6e732e706e67" alt="" width="300" />
+
 ## Setup
 
 The Workshop can be done in either Javscript or Scala, the differences are very minor so pick what best suites you.
@@ -17,14 +19,14 @@ You can run all the steps by running `npm t` or run all tests in watch mode by r
 * Run them, and should see 14 failing steps (since we haven't implemented any of them).
 
 #### Running specific step test
-You can run the tests for a specific step by running `npm t <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
+You can run the tests for a specific step by running `npm t <step>` or `npm run test:watch <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
 
-* Try it now on step 1 (`npm t 1`), and you should get one failing test `should have answer for step 1`.
+* Try it now on step 1 (`npm t 1` or `npm run test:watch 1`), and you should get one failing test `should have answer for step 1`.
 
 ### Scala Setup
 
 * Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
-* Open with Intellij, Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
+* Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
 * Click `Open As Project`
 * Click `Trust Project` 
 
@@ -39,9 +41,9 @@ You can run the tests for all the steps by running `src/test/scala/test/Test.sca
 You can run the tests for a specific step by editing the test configuration and setting `Program arguments` to be the `<step>`.  In order to solve a step you need to enter a Regex in the appropriate answer value in `./src/main/scala/solution/Solution.scala`.
 
 
-<img src="https://static.wixstatic.com/media/7c303e_dae05de3941e47759a690e94f8fbd4eb~mv2.png" width="250"/>
+<img src="https://static.wixstatic.com/media/7c303e_dae05de3941e47759a690e94f8fbd4eb~mv2.png" width="250" alt=""/>
 
-<img src="https://static.wixstatic.com/media/7c303e_daf12299c3094f3dab0b95f99157d614~mv2.png" width="350"/>
+<img src="https://static.wixstatic.com/media/7c303e_daf12299c3094f3dab0b95f99157d614~mv2.png" width="350" alt=""/>
 
 * Try it now on step 1 (`Program arguments: "1"`), and you should get one failing test `should have answer for step 1`.
 
@@ -53,7 +55,7 @@ A regular expression is a pattern used to check if a given text matches it.
 
 Most languages have similar patterns for Regex.
 
-In **Javascript** we write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
+In **Javascript** be write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
 
 **Example:** `/w/` is a regular expression that matches all words containing the letter `w`
 
@@ -95,7 +97,7 @@ In the word of Regular Expression there are *Character Classes* that can be used
 
 **Example:** `"\d\d"` is a regular expression that only matches a given text if it has two digits in a row. So for the text `"The answer is 42!"` since it contains two digits in a row (`4` and `2`) it matched our Regex. For the text `"1+1=2"`, although it contains two digits, since they are not in a row the regex doesn't match.
 
-**Write a Regular Expression that checks if the given text ends with ay digit.**
+**Write a Regular Expression that checks if the given text ends with any digit.**
 
 > In the `Solution` file write your answer in the `answer3` variable and run step 3 tests.
 
@@ -142,9 +144,9 @@ In order to add an Alternation for only a small pattern within the regex we can 
 
 In order to match any of several different charcters we can use Alternations `a|b|c|d|e` but a better way to do this would be to us a **Character Set**. `[abcde]` matches any of the letters within the Set `a`, `b`, `c`, `d` or `e`.
 
-* [a-g] is shorthand for writing all the leters between `a` and `g`.
-* [a-z] is how we would match any lower case character and [A-Z] any uppercase character.
-* [a-zA-Z0-9_] is the equivalent of using the `\w` Character Class that we saw in step 3.
+* `[a-g]` is shorthand for writing all the leters between `a` and `g`.
+* `[a-z]` is how we would match any lower case character and `[A-Z]` any uppercase character.
+* `[a-zA-Z0-9_]` is the equivalent of using the `\w` Character Class that we saw in step 3.
 
 **Example:** `"[a-eA-E]"` will match any text that contains any of the letters between `a` and `e` uppercase or lowercase. So for it would match `"A zoo"` (because of the `A`) but wouldn't match `"this zoo"` (since it has none of the letters between `a` and `e`).
 
@@ -260,8 +262,12 @@ Nothing left to teach you :)
 
 You are now a Regex Master! Congrats!
 
+<img src="https://www.meziantou.net/assets/perl-problems.png?v=f5e3" alt="" />
+
 If you want some more Regex challenges you can look in to the following links: 
 * [Regex Golf](https://alf.nu/RegexGolf)
 * [Regex Crossword](https://regexcrossword.com/)
 
 Careful! it is addictive.
+
+<img src="https://miro.medium.com/max/1400/1*o2JwtNB7w1nn63nj6z1N9Q.jpeg" alt="" width="400" />

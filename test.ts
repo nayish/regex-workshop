@@ -1,16 +1,16 @@
 const answers = require('./solution');
 const {steps} = require(`./test-config.json`);
 
-const testNum = process.argv[4];
+const currentStep = getCurrentStep()
 
-const numberOfTests = steps.length;
+const numberOfSteps = steps.length;
 
-if (+testNum > numberOfTests) {
-  throw `There is no step ${testNum} (try steps 1-${numberOfTests})`;
+if (+currentStep > numberOfSteps) {
+  throw `There is no step ${currentStep} (try steps 1-${numberOfSteps})`;
 }
-const tests = (testNum) ? [testNum] : new Array(numberOfTests).fill(1).map((_,i) => `${i+1}`);
+const stepsConfig = (currentStep) ? [currentStep] : new Array(numberOfSteps).fill(1).map((_,i) => `${i+1}`);
 
-describe.each(tests)(`Regex Step %s`, (currentTest) => {
+describe.each(stepsConfig)(`Regex Step %s`, (currentTest) => {
   const config = steps[+currentTest - 1];
   const answer = answers[`answer${currentTest}`]
 
@@ -22,13 +22,22 @@ describe.each(tests)(`Regex Step %s`, (currentTest) => {
     return;
   }
 
-  it.each(config.pass.map(JSON.stringify))(`should ${config.title}`, (text) => {
+  it.each(config.pass.map(JSON.stringify))(`should ${config.title} (%s)`, (text) => {
     expect(JSON.parse(text)).toMatch(answer);
   });
 
-  it.each(config.fail.map(JSON.stringify))(`should not ${config.title}`, (text) => {
+  it.each(config.fail.map(JSON.stringify))(`should not ${config.title} (%s)`, (text) => {
     expect(JSON.parse(text)).not.toMatch(answer);
   });
 });
+
+
+function getCurrentStep() {
+  try{
+    return JSON.parse(process.env.npm_config_argv).remain[0];
+  } catch {
+    return process.argv[4];
+  }
+}
 
 

@@ -12,4 +12,3 @@ export const answer11: RegExp = undefined;
 export const answer12: RegExp = undefined;
 export const answer13: RegExp = undefined;
 export const answer14: RegExp = undefined;
-
