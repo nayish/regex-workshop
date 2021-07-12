@@ -24,7 +24,7 @@ You can run the tests for a specific step by running `npm t <step>`.  In order t
 ### Scala Setup
 
 * Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
-* Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
+* Open with Intellij, Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
 * Click `Open As Project`
 * Click `Trust Project` 
 
