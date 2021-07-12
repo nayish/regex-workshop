@@ -63,7 +63,7 @@ In **Scala** we write the pattern as a regular String and then run `.r` on the s
 
 **Example:** `"w"` is the pattern used for a regular expression that matches all words containing the letter `w`
 
-**Write a Regular Expression that checks if the given text contains the letter `a`.**
+**Step 1 Challenge: Write a Regular Expression that checks if the given text contains the letter `a`.**
 
 > In the `Solution` file write your answer in the `answer1` variable.
 
@@ -80,7 +80,7 @@ In order to check that a given text starts with a specific pattern we can use th
 
 **Example:** `"ick$"` is a regular expression that only matches a given text if it has the letters `i` `c` `k` in that order and then the text immediately ends. So for the text `"Pickle Rick"` since it ends with `ick` it matched our Regex. For the text `"Rick and Morty"`, although it contains the pattern `ick`, it doesn't end with it, so it does not match the pattern.
 
-**Write a Regular Expression that checks if the given text starts with the letter `m`.**
+**Step 2 Challenge: Write a Regular Expression that checks if the given text starts with the letter `m`.**
 
 > In the `Solution` file write your answer in the `answer2` variable and run step 2 tests.
 
@@ -97,7 +97,7 @@ In the world of Regular Expression there are **Character Classes** that can be u
 
 **Example:** `"\d\d"` is a regular expression that only matches a given text if it has two digits in a row. So for the text `"The answer is 42!"` since it contains two digits in a row (`4` and `2`) it matches our Regex. For the text `"1+1=2"`, although it contains two digits, since they are not in a row the regex doesn't match.
 
-**Write a Regular Expression that checks if the given text ends with any digit.**
+**Step 3 Challenge: Write a Regular Expression that checks if the given text ends with any digit.**
 
 > In the `Solution` file write your answer in the `answer3` variable and run step 3 tests.
 
@@ -115,7 +115,7 @@ If we only care about the min or the max (but not both) we can just skip the oth
 
 **Example:** `"^a+c*b+$"` is a regular expression that only matches a given text if it begins with one or more `a`'s immediately followed by any number of `c`'s (including zero) and then immediately followed and ending by one or more `b`'s. Texts that match the pattern would be `"ab", "aaaaaaaaaccccbbb", "acccccccccccccbbb"...`. Text that don't match would be `"abc"` (`c`'s must come before `b`'s), `"ac"` (must have at least one `b`), `"cccccccbbbbbbb"` (must have at least one `a`).
 
-**Write a Regular Expression that checks if the given text contains a valid telephone number. A valid telephone number:**
+**Step 4 Challenge: Write a Regular Expression that checks if the given text contains a valid telephone number. A valid telephone number:**
 1. **always starts with a zero**
 2. **has dashes after the first three digits and the next three digits**
 3. **has 10 digits altogether**
@@ -134,7 +134,7 @@ In order to add an Alternation for only a small pattern within the regex we can 
 
 **Example:** `"^b(o|ar)b$"` will match only two texts `"bob"` and `"barb"`, the beginning `b` and the ending `b` are not part of the Alternation since only the `o|ar` are in the group.
 
-**Write a Regular Expression that checks if the given text contains a reference to guy warzager or guy segev, in order to shorten the regex you can use a group**
+**Step 5 Challenge: Write a Regular Expression that checks if the given text contains a reference to guy warzager or guy segev, in order to shorten the regex you can use a group**
 
 > In the `Solution` file write your answer in the `answer5` variable and run step 5 tests.
 
@@ -148,7 +148,7 @@ In order to match any of several different charcters we can use Alternations `a|
 
 **Example:** `"[a-eA-E]"` will match any text that contains any of the letters between `a` and `e` uppercase or lowercase. So it would match `"A zoo"` (because of the `A`) but wouldn't match `"this zoo"` (since it has none of the letters between `a` and `e`).
 
-**Write a Regular Expression that only matches a word of length of at least 3 and at most 10 or a valid number of length 3 (valid numbers have no leading zeros)** 
+**Step 6 Challenge: Write a Regular Expression that only matches a word of length of at least 3 and at most 10 or a valid number of length 3 (valid numbers have no leading zeros)** 
 
 > In the `Solution` file write your answer in the `answer6` variable and run step 6 tests.
 
@@ -171,7 +171,7 @@ Some available flags:
 
 **Example:** `/^m.m$/s` for Javascript or `"(?s)^m.m$"` for Scala matches `"mom", "mam", "mem", "m m", "m%m", "m\nm"`. notice that `^m.m$` (without the `s` flag) matches everything but `"m\nm"`.
 
-**Write a Regular Expression that only matches text containing a line that begins with `x` or `X` and ends with `q` or `Q` and all other characters in the line are `c` or `C`**
+**Step 7 Challenge: Write a Regular Expression that only matches text containing a line that begins with `x` or `X` and ends with `q` or `Q` and all other characters in the line are `c` or `C`**
 
 > In the `Solution` file write your answer in the `answer7` variable and run step 7 tests.
 
@@ -181,7 +181,7 @@ In order to not match a set of characters we can use a **Negative Character Set*
 
 **Example:** `"^a[^0-9]c$"` matches `"abc", "a+c", "a|c", "axc", "aac", "a{c"` but doesn't match `"a0c", "a1c"...`.
 
-**(Moderate) Write a Regular Expression that only matches text that contain a sequence of `g`'s that has an even amount, but is not within a sequence of odd amount of `g`'s. Clarification Example: `"ggg"` although it contains `gg` which is an even amount of `g`'s it is contained within a three `g` sequence so shouldn't match**
+**Step 8 Challenge: (Moderate) Write a Regular Expression that only matches text that contain a sequence of `g`'s that has an even amount, but is not within a sequence of odd amount of `g`'s. Clarification Example: `"ggg"` although it contains `gg` which is an even amount of `g`'s it is contained within a three `g` sequence so shouldn't match**
 
 > In the `Solution` file write your answer in the `answer8` variable and run step 8 tests.
 
@@ -197,7 +197,7 @@ In addition, when using Capture Groups we can also use the captured text outside
 
 If we want to not capture a group, we can use the **Non Capture Group** syntax `(?:a|b)`. This will match `a` or `b` but will not capture the group, so we can't use the `\1` since the group wasn't captured.
 
-**Write a Regular Expression that only matches text that contain at least three of the same character**
+**Step 9 Challenge: Write a Regular Expression that only matches text that contain at least three of the same character**
 
 > In the `Solution` file write your answer in the `answer9` variable and run step 9 tests.
 
@@ -217,7 +217,7 @@ There is also a Positive Lookbehind that works similarly but looking back at cha
 
 **Positive Lookaround** is the collective name of Positive Lookahead and Positive Lookbehind.
 
-**Write a Regular Expression that only matches a number with only odd digits that has at least one 5 digit (this can be done also without Positive Lookahead but would result in a longer regex)**
+**Step 10 Challenge: Write a Regular Expression that only matches a number with only odd digits that has at least one 5 digit (this can be done also without Positive Lookahead but would result in a longer regex)**
 
 > In the `Solution` file write your answer in the `answer10` variable and run step 10 tests.
 
@@ -225,7 +225,7 @@ There is also a Positive Lookbehind that works similarly but looking back at cha
 
 Similar to Positive Lookahead, Negative Lookahead allows you to check that a pattern **does not** match but doesn't "use up" the characters. Wrapping a pattern with `(?!)` allows to reuse the matching text in subsequent patterns.
 
-**Example:** `"^(?!a\dc)a.c$"` matches all text begining with `a` and ending with `c` with one character in the middle that is not a digit. This would match `"abc", "a%c"..` but not match `"a0c", "a1c"...`. (This can also be written as `"^a[^\d]c$"`)
+**Example:** `"^(?!a\d\dc)a..c$"` matches all text beginning with `a` and ending with `c` with two characters in the middle that the both can't be digits (but each can be separately. This would match `"abbc", "a%!c", "a1bc", "ab1c"..` but not match `"a00c", "a91c"...`.
 
 There is also a Negative Lookbehind that works similarly but looking back at characters we already "used up" `(?<!)`.
 
@@ -233,7 +233,7 @@ There is also a Negative Lookbehind that works similarly but looking back at cha
 
 [Read more about Positive and Negative Lookbehinds](https://www.regular-expressions.info/lookaround.html)
 
-**(HARD) Write a Regular Expression that only matches a given text if it doesnt contain the same letter twice in a row**
+**Step 11 Challenge: (HARD) Write a Regular Expression that only matches a given text if it doesnt contain the same letter twice in a row**
 
 > In the `Solution` file write your answer in the `answer11` variable and run step 11 tests.
 
@@ -241,7 +241,7 @@ There is also a Negative Lookbehind that works similarly but looking back at cha
 
 Nothing left to teach you :)
 
-**(Moderate) Write a Regular Expression that only Validates a Password with the following rules**
+**Step 12 Challenge: (Moderate) Write a Regular Expression that only Validates a Password with the following rules**
 1. **Has at least one uppercase letter**
 2. **Has at least one lowercase letter**
 3. **Has at least one digit**
@@ -250,11 +250,11 @@ Nothing left to teach you :)
 
 ## Step 13 - Palindrome
 
-**(Moderate) Write a Regular Expression that only matches [Palindromes](https://en.wikipedia.org/wiki/Palindrome#:~:text=A%20palindrome%20is%20a%20word,such%20as%20madam%20or%20racecar.) of length 4-5**
+**Step 13 Challenge: (Moderate) Write a Regular Expression that only matches [Palindromes](https://en.wikipedia.org/wiki/Palindrome#:~:text=A%20palindrome%20is%20a%20word,such%20as%20madam%20or%20racecar.) of length 4-5**
 
 ## Step 14 - Prime
 
-**(Super Hard) Write a Regular Expression that checks if a given text contains a sequence of x's that is of length that is a prime number**
+**Step 14 Challenge: (Super Hard) Write a Regular Expression that checks if a given text contains a sequence of x's that is of length that is a prime number**
 
 ## Further Challenges
 
