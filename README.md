@@ -18,10 +18,10 @@ You can run all the steps by running `npm t` or run all tests in watch mode by r
 
 * Run them, and you should see 14 failing steps (since we haven't implemented any of them).
 
-#### Running specific step test
+#### Running specific step tests
 You can run the tests for a specific step by running `npm t <step>` or `npm run test:watch <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
 
-* Try it now on step 1 (`npm t 1` or `npm run test:watch 1`), and you should get one failing test `should have answer for step 1`.
+* Try it now on step 1 (`npm t 1` or `npm run test:watch 1`), and you should have one failing test `"should have answer for step 1"`.
 
 ### Scala Setup
 
@@ -37,7 +37,7 @@ You can run the tests for all the steps by running `src/test/scala/test/Test.sca
 
 * Run them, and you should see 14 failing steps (since we haven't implemented any of them)
 
-#### Running specific step test
+#### Running specific step tests
 You can run the tests for a specific step by editing the test configuration and setting `Program arguments` to be the `<step>`.  In order to solve a step you need to enter a Regex in the appropriate answer value in `./src/main/scala/solution/Solution.scala`.
 
 
@@ -45,7 +45,7 @@ You can run the tests for a specific step by editing the test configuration and 
 
 <img src="https://static.wixstatic.com/media/7c303e_daf12299c3094f3dab0b95f99157d614~mv2.png" width="350" alt=""/>
 
-* Try it now on step 1 (`Program arguments: "1"`), and you should get one failing test `should have answer for step 1`.
+* Try it now on step 1 (`Program arguments: "1"`), and you should have one failing test `"should have answer for step 1"`.
 
 ***Now that you understand the setup we can begin.***
 
@@ -55,7 +55,7 @@ A regular expression is a pattern used to check if a given text matches it.
 
 Most languages have similar patterns for Regex.
 
-In **Javascript** be write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
+In **Javascript** we write our Regex between two slashes `//` or by using the `RegExp` object, we will stick with the slash notation.
 
 **Example:** `/w/` is a regular expression that matches all words containing the letter `w`
 
@@ -68,9 +68,9 @@ In **Scala** we write the pattern as a regular String and then run `.r` on the s
 > In the `Solution` file write your answer in the `answer1` variable.
 
 ### reminder
-**Javascript:** In order to check that you are correct run `npm t 1` in the terminal in this project root.
+**Javascript:** In order to check that you are correct run `npm t 1` or `npm run test:watch 1` in the terminal in this project root.
 
-**Scala:** run `Test.scala` and use `Program arguments` in order to filter for the current step (`1`).
+**Scala:** run `Test.scala` and use `Program arguments` in order to filter for the current step, `"1"`.
 
 ## Step 2 - Anchors
 
@@ -86,7 +86,7 @@ In order to check that a given text starts with a specific pattern we can use th
 
 ## Step 3 - Character Classes
 
-In the word of Regular Expression there are *Character Classes* that can be used to match characters from specific sets.
+In the world of Regular Expression there are **Character Classes** that can be used to match characters from specific sets.
 
 * `\d` matches any of the 10 digits [`0`, `1`..., `9`]
 * `\w` matches any of the letters of the english Alphabet uppercase & lowercase, digit or `_`
@@ -95,7 +95,7 @@ In the word of Regular Expression there are *Character Classes* that can be used
 
 [Read more about Character Classes here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes)
 
-**Example:** `"\d\d"` is a regular expression that only matches a given text if it has two digits in a row. So for the text `"The answer is 42!"` since it contains two digits in a row (`4` and `2`) it matched our Regex. For the text `"1+1=2"`, although it contains two digits, since they are not in a row the regex doesn't match.
+**Example:** `"\d\d"` is a regular expression that only matches a given text if it has two digits in a row. So for the text `"The answer is 42!"` since it contains two digits in a row (`4` and `2`) it matches our Regex. For the text `"1+1=2"`, although it contains two digits, since they are not in a row the regex doesn't match.
 
 **Write a Regular Expression that checks if the given text ends with any digit.**
 
@@ -103,17 +103,15 @@ In the word of Regular Expression there are *Character Classes* that can be used
 
 ## Step 4 - Quantifiers
 
-Sometimes we want to check a pattern is repeating a cretain ammount of times or between a min and max amount of times for that we use the `{min,max}` pattern also known as Quantifiers. So, `{2,4}` would check that the preceding pattern is at least of length 2 (inclusive) and at most length 4 (inclusive).
+Sometimes we want to check if a pattern is repeating a cretain amount of times or between a min and max amount of times, for that we use the `{min,max}` pattern also known as **Quantifiers**. So, `{2,4}` would check that the preceding pattern is at least of length 2 (inclusive) and at most length 4 (inclusive).
 
-**Example:** `"a{3,6}"` is a regular expression that only matches a given text if it has 3-6 `a`'s in a row. So the text `"Blah Blah Blaaah!"` matches since it contains `aaa`. On the other hand `Blah Blah Blah!` doesn't match since it doesn't contain more than one `a` in a row .
+**Example:** `"a{3,6}"` is a regular expression that only matches a given text if it has 3-6 `a`'s in a row. So the text `"Blah Blah Blaaah!"` matches since it contains `"aaa"`. On the other hand `"Blah Blah Blah!"` doesn't match since it doesn't contain more than one `a` in a row .
 
-If we only care about the min or the max (but not both) we can just skip the other. So `a{7}` checks that there are 7 `a`'s in a row at least and `a{,7}` checks that there are 7 `a`'s in a row at most.
+If we only care about the min or the max (but not both) we can just skip the other. So `"a{7}"` checks that there are 7 `a`'s in a row at least and `"a{0,7}"` checks that there are 7 `a`'s in a row at most.
 
-For `a{0}` there is a shorthand using a `*` which means any amount of the preceding pattern.
-
-For `a{1}` there is a shorthand using a `+` which means one or more of the preceding pattern.
-
-For `a{0,1}` there is a shorthand using a `?` which means zero or one of the preceding pattern.
+* For `a{0}` there is a shorthand using a `*` which means any amount of the preceding pattern.
+* For `a{1}` there is a shorthand using a `+` which means one or more of the preceding pattern.
+* For `a{0,1}` there is a shorthand using a `?` which means zero or one of the preceding pattern.
 
 **Example:** `"^a+c*b+$"` is a regular expression that only matches a given text if it begins with one or more `a`'s immediately followed by any number of `c`'s (including zero) and then immediately followed and ending by one or more `b`'s. Texts that match the pattern would be `"ab", "aaaaaaaaaccccbbb", "acccccccccccccbbb"...`. Text that don't match would be `"abc"` (`c`'s must come before `b`'s), `"ac"` (must have at least one `b`), `"cccccccbbbbbbb"` (must have at least one `a`).
 
@@ -142,13 +140,13 @@ In order to add an Alternation for only a small pattern within the regex we can 
 
 ## Step 6 - Character Set
 
-In order to match any of several different charcters we can use Alternations `a|b|c|d|e` but a better way to do this would be to us a **Character Set**. `[abcde]` matches any of the letters within the Set `a`, `b`, `c`, `d` or `e`.
+In order to match any of several different charcters we can use Alternations `a|b|c|d|e` but a better way to do this would be to use a **Character Set**. `[abcde]` matches any of the letters within the Set `a`, `b`, `c`, `d` or `e`.
 
-* `[a-g]` is shorthand for writing all the leters between `a` and `g`.
-* `[a-z]` is how we would match any lower case character and `[A-Z]` any uppercase character.
+* `[a-g]` is shorthand for writing all the letters between `a` and `g`.
+* `[a-z]` is how we would match any lowercase character and `[A-Z]` any uppercase character.
 * `[a-zA-Z0-9_]` is the equivalent of using the `\w` Character Class that we saw in step 3.
 
-**Example:** `"[a-eA-E]"` will match any text that contains any of the letters between `a` and `e` uppercase or lowercase. So for it would match `"A zoo"` (because of the `A`) but wouldn't match `"this zoo"` (since it has none of the letters between `a` and `e`).
+**Example:** `"[a-eA-E]"` will match any text that contains any of the letters between `a` and `e` uppercase or lowercase. So it would match `"A zoo"` (because of the `A`) but wouldn't match `"this zoo"` (since it has none of the letters between `a` and `e`).
 
 **Write a Regular Expression that only matches a word of length of at least 3 and at most 10 or a valid number of length 3 (valid numbers have no leading zeros)** 
 
@@ -160,7 +158,7 @@ Patterns can have **Flags** attached to them in order to alter the way the match
 
 In **Javascript** flags are appended after the last slash. Each flag is one letter added to the end of the regular expression, so to use the `m` flag we would write `/a|b/m`. We can also append several for example `/a|b/gms`
 
-In **Scala** flags are appended to the start of the pattern. Each flag is one letter, so to use the `m` flag we would write `(?m)a|b`. We can also append several for example `(?gms)a|b`.
+In **Scala** flags are appended to the start of the pattern. Each flag is one letter, so to use the `m` flag we would write `"(?m)a|b"`. We can also append several for example `"(?gms)a|b"`.
 
 Some available flags:
 
