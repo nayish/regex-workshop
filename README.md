@@ -8,46 +8,11 @@ In this workshop we will learn how to write Regular Expressions to match many di
 
 The Workshop can be done in either Javscript or Scala, the differences are very minor so pick what best suites you.
 
-### Javascript Setup
-* Make sure you have [Node.js and NPM installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-* Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
-* Install the project (`npm i` in the root of the project).
+Choose one:
+* [Javascript Setup](./javascript-setup.md)
+* [Scala Setup](./scala-setup.md)
 
-#### Running all tests
-You can run all the steps by running `npm t` or run all tests in watch mode by running `npm run test:watch`.
-
-* Run them, and you should see 14 failing steps (since we haven't implemented any of them).
-
-#### Running specific step tests
-You can run the tests for a specific step by running `npm t <step>` or `npm run test:watch <step>`.  In order to solve a step you need to enter a Regex in the appropriate answer variable in `./solution.ts`.
-
-* Try it now on step 1 (`npm t 1` or `npm run test:watch 1`), and you should have one failing test `"should have answer for step 1"`.
-
-### Scala Setup
-
-* Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
-* Select `File` > `Open...` and choose the `scala.sbt` file in the cloned repo.
-* Click `Open As Project`
-* Click `Trust Project` 
-
-> This may take a few minutes (~2m)
-
-#### Running all tests
-You can run the tests for all the steps by running `src/test/scala/test/Test.scala`.
-
-* Run them, and you should see 14 failing steps (since we haven't implemented any of them)
-
-#### Running specific step tests
-You can run the tests for a specific step by editing the test configuration and setting `Program arguments` to be the `<step>`.  In order to solve a step you need to enter a Regex in the appropriate answer value in `./src/main/scala/solution/Solution.scala`.
-
-
-<img src="https://static.wixstatic.com/media/7c303e_dae05de3941e47759a690e94f8fbd4eb~mv2.png" width="250" alt=""/>
-
-<img src="https://static.wixstatic.com/media/7c303e_daf12299c3094f3dab0b95f99157d614~mv2.png" width="350" alt=""/>
-
-* Try it now on step 1 (`Program arguments: "1"`), and you should have one failing test `"should have answer for step 1"`.
-
-***Now that you understand the setup we can begin.***
+***After you finish and understand the setup we can begin.***
 
 ## Step 1 - Intro
 
