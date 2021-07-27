@@ -99,7 +99,7 @@ In order to add an Alternation for only a small pattern within the regex we can 
 
 **Example:** `"^b(o|ar)b$"` will match only two texts `"bob"` and `"barb"`, the beginning `b` and the ending `b` are not part of the Alternation since only the `o|ar` are in the group.
 
-**Step 5 Challenge: Write a Regular Expression that checks if the given text contains a reference to guy warzager or guy segev, in order to shorten the regex you can use a group**
+**Step 5 Challenge: Write a Regular Expression that checks if the given text contains a reference to guy varzager or guy segev, in order to shorten the regex you can use a group**
 
 > In the `Solution` file write your answer in the `answer5` variable and run step 5 tests.
 
