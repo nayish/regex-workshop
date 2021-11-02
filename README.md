@@ -113,7 +113,7 @@ In order to match any of several different charcters we can use Alternations `a|
 
 **Example:** `"[a-eA-E]"` will match any text that contains any of the letters between `a` and `e` uppercase or lowercase. So it would match `"A zoo"` (because of the `A`) but wouldn't match `"this zoo"` (since it has none of the letters between `a` and `e`).
 
-**Step 6 Challenge: Write a Regular Expression that only matches a word of length of at least 3 and at most 10 or a valid number of length 3 (valid numbers have no leading zeros)** 
+**Step 6 Challenge: Write a Regular Expression that only matches a word (contains uppercase and lowercase letters onnly) of length of at least 3 and at most 10 or a valid number of length 3 (valid numbers have no leading zeros)** 
 
 > In the `Solution` file write your answer in the `answer6` variable and run step 6 tests.
 
