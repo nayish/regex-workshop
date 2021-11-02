@@ -72,10 +72,10 @@ Sometimes we want to check if a pattern is repeating a cretain amount of times o
 
 **Example:** `"a{3,6}"` is a regular expression that only matches a given text if it has 3-6 `a`'s in a row. So the text `"Blah Blah Blaaah!"` matches since it contains `"aaa"`. On the other hand `"Blah Blah Blah!"` doesn't match since it doesn't contain more than one `a` in a row .
 
-If we only care about the min or the max (but not both) we can just skip the other. So `"a{7}"` checks that there are 7 `a`'s in a row at least and `"a{0,7}"` checks that there are 7 `a`'s in a row at most.
+If we only care about the min we can do so by removing the max (but leaving the comma), so `"a{7,}"` checks that there are 7 `a`'s in a row at least. If we want an exact number of occurrences we remove the comma to, so `"a{5}"` checks that there are 5 `a`'s in a row exactly.
 
-* For `a{0}` there is a shorthand using a `*` which means any amount of the preceding pattern.
-* For `a{1}` there is a shorthand using a `+` which means one or more of the preceding pattern.
+* For `a{0,}` there is a shorthand using a `*` which means any amount of the preceding pattern.
+* For `a{1,}` there is a shorthand using a `+` which means one or more of the preceding pattern.
 * For `a{0,1}` there is a shorthand using a `?` which means zero or one of the preceding pattern.
 
 **Example:** `"^a+c*b+$"` is a regular expression that only matches a given text if it begins with one or more `a`'s immediately followed by any number of `c`'s (including zero) and then immediately followed and ending by one or more `b`'s. Texts that match the pattern would be `"ab", "aaaaaaaaaccccbbb", "acccccccccccccbbb"...`. Text that don't match would be `"abc"` (`c`'s must come before `b`'s), `"ac"` (must have at least one `b`), `"cccccccbbbbbbb"` (must have at least one `a`).
