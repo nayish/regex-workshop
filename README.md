@@ -95,7 +95,7 @@ If we have several patterns we want to match we can use the pipe `|` to match th
 
 **Example:** `"Mr Meseeks|Look at me"` will match any text that contains `Mr Meseeks` **or** contains `Look at me`.
 
-In order to add an Alternation for only a small pattern within the regex we can use grouping (which we will elaborate on it's' awesome powers in the following steps) by wrapping our pattern in parentheses `()`.
+In order to add an Alternation for only a small pattern within the regex we can use grouping (which we will elaborate on its awesome powers in the following steps) by wrapping our pattern in parentheses `()`.
 
 **Example:** `"^b(o|ar)b$"` will match only two texts `"bob"` and `"barb"`, the beginning `b` and the ending `b` are not part of the Alternation since only the `o|ar` are in the group.
 
