@@ -3,8 +3,10 @@ package test
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
 import solution.Solution
+import test.Test.args
 
 import scala.io.Source
+import scala.util.Try
 
 case class Config(steps: Seq[StepConfig])
 case class StepConfig(title: String, pass: Seq[String], fail: Seq[String])
@@ -12,8 +14,13 @@ case class StepConfig(title: String, pass: Seq[String], fail: Seq[String])
 
 object Test extends App {
   val steps = getSteps()
+  val numberOfSteps = steps.size
 
-  val testsToRun: Seq[Int] = if (args.length > 0) Seq(args(0).toInt) else (1 to (steps.size)).toList
+  if (args.length > 0 && (Try(args(0).toInt).isFailure || args(0).toInt < 1 || args(0).toInt > numberOfSteps)) {
+    throw new Error(s"There is no step ${args(0)} (try steps 1-${numberOfSteps})")
+  }
+
+  val testsToRun: Seq[Int] = if (args.length > 0) Seq(args(0).toInt) else (1 to (numberOfSteps)).toList
 
   var total = 0;
   var passed = 0;

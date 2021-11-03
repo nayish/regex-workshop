@@ -1,11 +1,11 @@
 const answers = require('./solution');
 const {steps} = require(`./test-config.json`);
 
-const currentStep = getCurrentStep()
+const currentStep = getCurrentStep();
 
 const numberOfSteps = steps.length;
 
-if (+currentStep > numberOfSteps) {
+if (currentStep !== undefined && (+currentStep < 1 || +currentStep > numberOfSteps || Number.isNaN(+currentStep))) {
   throw `There is no step ${currentStep} (try steps 1-${numberOfSteps})`;
 }
 const stepsConfig = (currentStep) ? [currentStep] : new Array(numberOfSteps).fill(1).map((_,i) => `${i+1}`);
