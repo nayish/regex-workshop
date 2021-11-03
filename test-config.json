@@ -12,7 +12,7 @@
     },
     {
       "title": "end with number",
-      "pass": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 0\nasdasd"],
+      "pass": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 1\nasdasd2"],
       "fail": ["", "1asd", "asda\n1sfsdf", "b\n1asdasd\n121313df"]
     },
      {
