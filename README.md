@@ -128,7 +128,7 @@ In **Scala** flags are appended to the start of the pattern. Each flag is one le
 Some available flags:
 
 * `i` - case-insensitive pattern matching
-* `g` - greedy matching, will return all matches and not just the first
+* `g` - global matching, will return all matches and not just the first
 * `m` - multiline mode, changes `^` and `$` to match the beginning and ending of a line and not just of the entire text
 * `s` - Makes the `.` Character Class match all characters including `\n`
 
