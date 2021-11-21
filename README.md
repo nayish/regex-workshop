@@ -150,6 +150,12 @@ In order to not match a set of characters we can use a **Negative Character Set*
 
 > In the `Solution` file write your answer in the `answer8` variable and run step 8 tests.
 
+<details>
+  <summary>Hint</summary>
+  
+> To ensure an even amount of `g`'s we need to ensure that before and after the sequence we don't have `g`'s. To ensure this we can check that before we have a character that is not `g` or that we are at the begining of the string (using negative charcter set alternations and an anchor). Similarly we can think of what we would check for after the sequence.
+</details>
+
 ## Step 9 - Capture Groups
 
 We began discussing groups in Step 5 and here we will see one of its superpowers.
