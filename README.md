@@ -12,6 +12,8 @@ Choose one:
 * [Javascript Setup](./javascript-setup.md)
 * [Scala Setup](./scala-setup.md)
 
+> 💡 [regex101.com](https://regex101.com) is a site that breaks down a given regular expressions to its different parts and allows to test text against it - this can be useful for this workshop if you get stuck.
+
 ***After you finish and understand the setup we can begin.***
 
 ## Step 1 - Intro
@@ -146,14 +148,18 @@ In order to not match a set of characters we can use a **Negative Character Set*
 
 **Example:** `"^a[^0-9]c$"` matches `"abc", "a+c", "a|c", "axc", "aac", "a{c"` but doesn't match `"a0c", "a1c"...`.
 
-**Step 8 Challenge: (Moderate) Write a Regular Expression that only matches text that contain a sequence of `g`'s that has an even amount, but is not within a sequence of odd amount of `g`'s. Clarification Example: `"ggg"` although it contains `gg` which is an even amount of `g`'s it is contained within a three `g` sequence so shouldn't match**
+**Step 8 Challenge: (Moderate) Write a Regular Expression that only matches text that contains a sequence of `g`'s of an even length. The even sequence must not be contained in a longer sequence of odd amount of `g`'s.***
+
+***Clarification Example:** `"ggg"` although it contains `gg` which is an even amount of `g`'s it is contained within a three `g` sequence so shouldn't match.*
 
 > In the `Solution` file write your answer in the `answer8` variable and run step 8 tests.
 
 <details>
   <summary>Hint</summary>
-  
-> To ensure an even amount of `g`'s we need to ensure that before and after the sequence we don't have `g`'s. To ensure this we can check that before we have a character that is not `g` or that we are at the begining of the string (using negative charcter set alternations and an anchor). Similarly we can think of what we would check for after the sequence.
+
+> To ensure an even amount of `g`'s we need to ensure that before and after the sequence we don't have `g`'s.
+> 
+>*To ensure this we can check that before it we have a character that is not `g` or that we are at the beginning of the string (using a **negative character set**, **alternations** and an **anchor**). Similarly, you can think of what we would check for after the sequence.*
 </details>
 
 ## Step 9 - Capture Groups
