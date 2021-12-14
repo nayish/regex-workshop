@@ -1,7 +1,7 @@
 # Scala Setup
 
 * Clone this project locally `git clone git@github.com:nayish/regex-workshop.git`
-* Select `File` > `Open...` and choose the `build.sbt` file in the cloned repo.
+* In Intellij, Select `File` > `Open...` and choose the `build.sbt` file in the cloned repo.
 * Click `Open As Project`
 * Click `Trust Project` (This may take a few minutes ~2m)
 
