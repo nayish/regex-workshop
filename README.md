@@ -72,7 +72,7 @@ In the world of Regular Expression there are **Character Classes** that can be u
 
 Sometimes we want to check if a pattern is repeating a cretain amount of times or between a min and max amount of times, for that we use the `{min,max}` pattern also known as **Quantifiers**. So, `{2,4}` would check that the preceding pattern is at least of length 2 (inclusive) and at most length 4 (inclusive).
 
-**Example:** `"a{3,6}"` is a regular expression that only matches a given text if it has 3-6 `a`'s in a row. So the text `"Blah Blah Blaaah!"` matches since it contains `"aaa"`. On the other hand `"Blah Blah Blah!"` doesn't match since it doesn't contain more than one `a` in a row .
+**Example:** `"a{3,6}"` is a regular expression that only matches a given text if it has 3-6 `a`'s in a row. So the text `"Blah Blah Blaaah!"` matches since it contains `"aaa"`. On the other hand `"Blah Blah Blah!"` doesn't match since it doesn't contain more than one `a` in a row.
 
 If we only care about the min we can do so by removing the max (but leaving the comma), so `"a{7,}"` checks that there are 7 `a`'s in a row at least. If we want an exact number of occurrences we remove the comma to, so `"a{5}"` checks that there are 5 `a`'s in a row exactly.
 
