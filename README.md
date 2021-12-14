@@ -35,7 +35,7 @@ In **Scala** we write the pattern as a regular String and then run `.r` on the s
 > In the `Solution` file write your answer in the `answer1` variable.
 
 ### reminder
-**Javascript:** In order to check that you are correct run `npm t 1` or `npm run test:watch 1` in the terminal in this project root.
+**Javascript:** In order to check that you are correct run `npm t 1` or `npm run test:watch 1` in the terminal of the project root.
 
 **Scala:** run `Test.scala` and use `Program arguments` in order to filter for the current step, `"1"`.
 
