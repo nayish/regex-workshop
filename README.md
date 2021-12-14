@@ -43,7 +43,7 @@ In **Scala** we write the pattern as a regular String and then run `.r` on the s
 
 In order to check that a given text starts with a specific pattern we can use the `^` character and in order to check if it ends with a specific pattern we can use the `$` character - these are called *Anchors*.
 
-`\b` is another Anchor that can be used to check if the pattern is at the end of a word.
+`\b` is another Anchor that can be used to check if the pattern is at a word's [boundry](https://javascript.info/regexp-boundary).
 
 **Example:** `"ick$"` is a regular expression that only matches a given text if it has the letters `i` `c` `k` in that order and then the text immediately ends. So for the text `"Pickle Rick"` since it ends with `ick` it matched our Regex. For the text `"Rick and Morty"`, although it contains the pattern `ick`, it doesn't end with it, so it does not match the pattern.
 
