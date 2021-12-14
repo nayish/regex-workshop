@@ -8,7 +8,7 @@ In this workshop we will learn how to write Regular Expressions to match many di
 
 The Workshop can be done in either Javscript or Scala, the differences are very minor so pick what best suites you.
 
-Choose one:
+Choose one and go through the setup:
 * [Javascript Setup](./javascript-setup.md)
 * [Scala Setup](./scala-setup.md)
 
