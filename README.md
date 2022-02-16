@@ -231,7 +231,7 @@ Nothing left to teach you :)
 
 ## Step 14 - Prime
 
-**Step 14 Challenge: (Super Hard) Write a Regular Expression that checks if a given text contains a sequence of x's that is of length that is a prime number**
+**Step 14 Challenge: (Super Hard) Write a Regular Expression that checks if a given text is exactly a sequence of x's that is of length that is a prime number**
 
 ## Further Challenges
 
