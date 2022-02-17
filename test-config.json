@@ -37,7 +37,7 @@
     },
      {
       "title": "contain an even number of \"g\"s in a row",
-      "pass": ["gg", "gggg", "gggggg", "a gggggggg","a gg nvs vs 123 4124 bdfbg"],
+      "pass": ["gg", "gggggg", "a gggggggg","a gg nvs vs 123 4124 bdfbg", "gggga"],
       "fail": ["g", "ggg", "123 sfs ggggg 123", "g1g1g1"]
     },
     {
