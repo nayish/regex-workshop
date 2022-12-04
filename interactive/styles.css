@@ -1,0 +1,713 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Avenir Next";
+    background: #DFDFDF;
+}
+
+.copy {
+    font-size: 8px;
+    position: absolute;
+    top: 40px;
+    left: -32px;
+    transform: rotate(-90deg);
+}
+
+.twitter {
+    font-size: 8px;
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.twitter img {
+    width: 20px;
+    display: block;
+    margin: auto;
+
+}
+
+.card {
+    position: relative;
+    margin: 10px auto;
+    width: 1000px;
+    border: 1px solid #AAAAAA;
+    padding: 20px;
+    background: white
+}
+
+.description {
+    border-top: 1px solid #AAAAAA;
+}
+.description:empty {
+    border: 0;
+}
+
+.card h1 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.card code {
+    background: #EEEEEE;
+    padding: 2px 3px;
+    border-radius: 2px;
+}
+
+button.next {
+    background: #DFDFDF;
+    border: 1px solid #AAAAAA;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: #333333;
+    right: 20px;
+    bottom: 30px;
+    position: absolute;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+button.previous {
+    background: #DFDFDF;
+    border: 1px solid #AAAAAA;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: #333333;
+    left: 20px;
+    bottom: 30px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.completed .next {
+    visibility: visible;
+}
+
+.card .footer {
+    text-align: right;
+}
+
+.card .solution {
+    line-height: 2px;
+    padding: 10px 20px;
+    font-size: 30px;
+    border: 1px solid #EFEFEF;
+    background: #FEFEFE;
+    width: 730px;
+    margin: auto;
+    text-align: center;
+}
+
+.error .solution, .error .solution-line {
+    color: red;
+    outline-color: red;
+}
+
+.completed .solution, .completed .solution-line {
+    color: lightgreen;
+    outline-color: lightgreen;
+}
+
+.card .solution-line {
+    text-align: center;
+    font-size: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card.phrases {
+    position: relative;
+    height: 215px;
+    background: linear-gradient(90deg, lightgreen 33.33%, white 33.33%, white 66.66%, #FFCCCB 66.66%);
+}
+
+.phrase.pass, .phrase.fail {
+    animation: none;
+}
+
+.phrase {
+    animation: shake 5s cubic-bezier(.36,.07,.19,.97) infinite;
+    position: absolute;
+    left: 50%;
+    width: 130px;
+    font-size: 12px;
+    background: lightgreen;
+    padding: 5px;
+    font-weight:bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: top 1s, left 1s;
+    white-space: pre;
+}
+.error-message {
+    display: none;
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    right: 135px;
+    bottom: 10px;
+}
+
+.error .error-message {
+    display: block;
+
+}
+
+@keyframes shake {
+    77%, 98% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    80%, 95% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    82%, 87%, 92% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    85%, 90% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.phrase.invalid {
+    background: #FFCCCB;
+}
+.checkmark {
+    position: absolute;
+    bottom: 20px;
+    right: 77px;
+    font-size: 60px;
+    color: lightgreen;
+    visibility: hidden;
+}
+
+.completed .checkmark {
+    visibility: visible;
+}
+
+.phrase-0 {
+    animation-delay: 0.3s;
+    left:515px;
+    top:125px;
+}
+
+.phrase-1 {
+    animation-delay: 2s;
+    left:345px;
+    top:15px;
+}
+
+.phrase-2 {
+    animation-delay: 0.9s;
+    left:345px;
+    top:175px;
+}
+
+.phrase-3 {
+    animation-delay: 1.5s;
+    left:525px;
+    top:5px;
+}
+
+.phrase-4 {
+    animation-delay: 2.6s;
+    left:505px;
+    top:45px;
+}
+
+.phrase-5 {
+    animation-delay: 3s;
+    left:350px;
+    top:95px;
+}
+
+.phrase-6 {
+    left:355px;
+    top:135px;
+}
+
+.phrase-7 {
+    animation-delay: 2.2s;
+    left:520px;
+    top:85px;
+}
+
+.phrase-8 {
+    animation-delay: 3.4s;
+    left:355px;
+    top:55px;
+}
+
+.phrase-9 {
+    animation-delay: 1.8s;
+    left:525px;
+    top:165px;
+}
+
+.phrase-0.pass {
+    left: 186px;
+    top: 85px;
+}
+
+.phrase-1.pass {
+    left: 21px;
+    top: 135px;
+}
+
+.phrase-2.pass {
+    left: 191px;
+    top: 165px
+}
+
+.phrase-3.pass {
+    left:171px;
+    top: 45px;
+}
+
+.phrase-4.pass {
+    left: 11px;
+    top: 15px;
+}
+
+.phrase-5.pass {
+    left: 16px;
+    top: 55px;
+}
+
+.phrase-6.pass {
+    left: 181px;
+    top: 125px;
+}
+
+.phrase-7.pass {
+    left: 191px;
+    top: 5px;
+}
+
+.phrase-8.pass {
+    left: 16px;
+    top: 95px;
+}
+
+.phrase-9.pass {
+    left: 11px;
+    top: 175px;
+}
+
+.phrase-0.fail {
+    left:678px;
+    top:15px;
+}
+
+.phrase-1.fail {
+    left:838px;
+    top:45px;
+}
+
+.phrase-2.fail {
+    left:678px;
+    top:175px;
+}
+
+.phrase-3.fail {
+    left:688px;
+    top:135px;
+}
+
+.phrase-4.fail {
+    left:853px;
+    top:85px;
+}
+
+.phrase-5.fail {
+    left:688px;
+    top:55px;
+}
+
+.phrase-6.fail {
+    left:858px;
+    top:165px;
+}
+
+.phrase-7.fail {
+    left:858px;
+    top:5px;
+}
+
+.phrase-8.fail {
+    left:848px;
+    top:125px;
+}
+
+.phrase-9.fail {
+    left:683px;
+    top:95px;
+}
+
+.goto-challenge {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-width: 320px;
+    }
+    .description {
+        font-size:12px;
+    }
+    .goto-challenge {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%);
+
+    }
+    .challenge-mode .goto-challenge {
+        display: none;
+    }
+    .lesson{flex-grow: 1;}
+    .challenge-mode .lesson{
+        flex-grow: unset;
+    }
+    .challenge-container, .phrases {
+        display: none;
+    }
+
+    .challenge-mode .challenge-container, .challenge-mode .phrases {
+        display: block;
+    }
+    .challenge-mode .description {
+        display:none;
+    }
+    .phrase {
+        padding: 1px 4px;
+    }
+    .card .solution {
+        padding: 5px 10px;
+        font-size: 13px;
+        background: #FEFEFE;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+    .card {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        padding:0;
+    }
+    .card h1 {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .challenge-box {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    .checkmark {
+        bottom: 24px;
+        right: 12px;
+        font-size: 21px;
+    }
+    button.next {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        right: 5px;
+        bottom: 5px;
+    }
+    button.previous {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        left: 5px;
+        bottom: 5px;
+    }
+    .solution-line {
+        margin:0;
+    }
+    .challenge-container {
+        margin-top:0;
+        margin-bottom: 0;
+        padding: 0 20px;
+    }
+    .card.phrases {
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-grow: 1;
+        background: linear-gradient(180deg, lightgreen 33.33%, white 33.33%, white 66.66%, #FFCCCB 66.66%);
+    }
+    .error-message {
+        font-size: 8px;
+        right: 42px;
+        bottom: 1px;
+    }
+    .copy {
+        display: none;
+    }
+
+    .phrase-0 {
+        animation-delay: 3.4s;
+        left:1%;
+        top: calc(38% - 12px);
+    }
+
+    .phrase-1 {
+        animation-delay: 0.3s;
+        left: calc(99% - 130px);
+        top: calc(44% - 12px);
+    }
+
+    .phrase-2 {
+        animation-delay: 2s;
+        left: calc(98% - 130px);
+        top: calc(50% - 12px);
+    }
+
+    .phrase-3 {
+        animation-delay: 0.9s;
+        left: 6%;
+        top: calc(56% - 12px);
+    }
+
+    .phrase-4 {
+        animation-delay: 1.8s;
+        left: 5%;
+        top: calc(62% - 12px);
+    }
+
+    .phrase-5 {
+        animation-delay: 2.6s;
+        left: calc(96% - 130px);
+        top: calc(38% - 12px);
+    }
+
+    .phrase-6 {
+        animation-delay: 3s;
+        left: 5%;
+        top: calc(44% - 12px);
+    }
+
+    .phrase-7 {
+        left: calc(99% - 130px);
+        top: calc(56% - 12px);
+    }
+
+    .phrase-8 {
+        animation-delay: 2.2s;
+        left: 1%;
+        top: calc(50% - 12px);
+    }
+
+    .phrase-9 {
+        animation-delay: 1.5s;
+        left: calc(93% - 130px);
+        top: calc(62% - 12px);
+    }
+
+    .phrase-7.fail {
+        animation-delay: 0.3s;
+        left:20%;
+        top:82%;
+    }
+
+    .phrase-6.fail {
+        animation-delay: 2s;
+        left:30%;
+        top:calc(82% + 40px);
+    }
+
+    .phrase-4.fail {
+        animation-delay: 0.9s;
+        left:40%;
+        top:calc(82% - 40px);
+    }
+
+    .phrase-9.fail {
+        animation-delay: 1.8s;
+        left:81%;
+        top:calc(82% + 2px);
+    }
+
+    .phrase-8.fail {
+        animation-delay: 2.6s;
+        left:60%;
+        top:calc(82% - 35px);
+    }
+
+    .phrase-5.fail {
+        animation-delay: 3s;
+        left: 65%;
+        top:calc(82% + 40px);
+    }
+
+    .phrase-2.fail {
+        left:80%;
+        top:calc(82% - 45px);
+    }
+
+    .phrase-0.fail {
+        animation-delay: 2.2s;
+        left:10%;
+        top:calc(82% + 38px);
+    }
+
+    .phrase-1.fail {
+        animation-delay: 1.5s;
+        left:50%;
+        top:calc(82% + 10px);
+    }
+
+    .phrase-3.fail {
+        animation-delay: 3.4s;
+        left:1%;
+        top:1%;
+    }
+
+    .phrase-7.pass {
+        animation-delay: 0.3s;
+        left: calc(99% - 130px);
+        top: 1%;
+    }
+
+    .phrase-6.pass {
+        animation-delay: 2s;
+        left: calc(98% - 130px);
+        top: 25%;
+    }
+
+    .phrase-4.pass {
+        animation-delay: 0.9s;
+        left: 6%;
+        top: 13%;
+    }
+
+    .phrase-9.pass {
+        animation-delay: 1.8s;
+        left: 5%;
+        top: 19%;
+    }
+
+    .phrase-8.pass {
+        animation-delay: 2.6s;
+        left: calc(96% - 130px);
+        top: 13%;
+    }
+
+    .phrase-5.pass {
+        animation-delay: 3s;
+        left: 5%;
+        top: 7%;
+    }
+
+    .phrase-2.pass {
+        left: calc(99% - 130px);
+        top: 19%;
+    }
+
+    .phrase-0.pass {
+        animation-delay: 2.2s;
+        left: 1%;
+        top: 25%;
+    }
+
+    .phrase-1.pass {
+        animation-delay: 1.5s;
+        left: calc(93% - 130px);
+        top: 7%;
+    }
+
+    .twitter img {
+        width: 15px;
+    }
+
+    .twitter .handle {
+        display: none;
+    }
+
+    .phrase-3.pass {
+        animation-delay: 3.4s;
+        left:1%;
+        top: 1%;
+    }
+
+    .phrase-9.fail {
+        animation-delay: 0.3s;
+        left: calc(99% - 130px);
+        top: calc(99% - 24px);
+    }
+
+    .phrase-8.fail {
+        animation-delay: 2s;
+        left: calc(98% - 130px);
+        top: calc(75% - 24px);
+    }
+
+    .phrase-6.fail {
+        animation-delay: 0.9s;
+        left: 6%;
+        top: calc(87% - 24px);
+    }
+
+    .phrase-1.fail {
+        animation-delay: 1.8s;
+        left: 5%;
+        top: calc(81% - 24px);
+    }
+
+    .phrase-0.fail {
+        animation-delay: 2.6s;
+        left: calc(96% - 130px);
+        top: calc(87% - 24px);
+    }
+
+    .phrase-7.fail {
+        animation-delay: 3s;
+        left: 5%;
+        top: calc(93% - 24px);
+    }
+
+    .phrase-4.fail {
+        left: calc(99% - 130px);
+        top: calc(81% - 24px);
+    }
+
+    .phrase-2.fail {
+        animation-delay: 2.2s;
+        left: 1%;
+        top: calc(75% - 24px);
+    }
+
+    .phrase-3.fail {
+        animation-delay: 1.5s;
+        left: calc(93% - 130px);
+        top: calc(93% - 24px);
+    }
+
+    .phrase-5.fail {
+        animation-delay: 3.4s;
+        left:1%;
+        top: calc(99% - 24px);
+    }
+}
+
