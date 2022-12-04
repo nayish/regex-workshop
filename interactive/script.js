@@ -1,4 +1,4 @@
-const workshopPromise = fetch('/workshop.json');
+const workshopPromise = fetch('./workshop.json');
 
 const positions = [
     [256, 5],
