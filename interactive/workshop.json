@@ -1,0 +1,100 @@
+{
+  "chapters": [
+    {
+      "title": "Intro to Regex",
+      "description": "A regular expression is a pattern used to check if a given text matches it.\nMost languages have similar patterns for Regex.\nIn Javascript we write our Regex between two slashes <code>//</code> or by using the RegExp object, we will stick with the slash notation.\n<strong>Example:</strong> <code>/w/</code> is a regular expression that matches all words containing the letter <code>w</code>",
+      "challenge": "Write a Regular Expression that checks if the given text contains the letter <code>a</code>.",
+      "valid": ["a", "ab", "valid", "w\na", "answer"],
+      "invalid": ["", "bbb", "regex", "b\nc", "wrong"]
+    },
+    {
+      "title": "Anchors",
+      "description": "In order to check that a given text starts with a specific pattern we can use the <code>^</code> character and in order to check if it ends with a specific pattern we can use the <code>$</code> character - these are called <strong>Anchors</strong>.\n<code>\\b</code> is another Anchor that can be used to check if the pattern is at a word's <a href=\"https://javascript.info/regexp-boundary\" target=\"_blank\">boundry</a>.\n<strong>Example:</strong> <code>\"ick$\"</code> is a regular expression that only matches a given text if it has the letters <code>i</code> <code>c</code> <code>k</code> in that order and then the text immediately ends. So for the text <code>\"Pickle Rick\"</code> since it ends with <code>ick</code> it matched our Regex. For the text <code>\"Rick and Morty\"</code>, although it contains the pattern <code>ick</code>, it doesn't end with it, so it does not match the pattern.",
+      "challenge": "Write a Regular Expression that checks if the given text starts with the letter <code>m</code>.",
+      "valid": ["m", "monday blues", "m ba", "m\na", "mommy"],
+      "invalid": ["", "bmbb", "cbccbm", "b\nm", "grammy"]
+    },
+    {
+      "title": "Character Classes",
+      "description": "In the world of Regular Expression there are Character Classes that can be used to match characters from specific sets.\n<ul><li><code>\\d</code> matches any of the 10 digits [<code>0</code>, <code>1</code>..., <code>9</code>]</li><li><code>\\w</code> matches any of the letters of the english Alphabet uppercase & lowercase, digit or <code>_</code></li><li><code>\\s</code> matches any whitespace [<code>' '</code>, <code>'\\n'</code>, <code>'\\t'</code>...]</li><li><code>.</code> matches any character except line breaks</li></ul>\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes\" target=\"_blank\">Read more about Character Classes here</a>\n<strong>Example:</strong> <code>\"\\d\\d\"</code> is a regular expression that only matches a given text if it has two digits in a row. So for the text <code>\"The answer is 42!\"</code> since it contains two digits in a row (<code>4</code> and <code>2</code>) it matches our Regex. For the text <code>\"1+1=2\"</code>, although it contains two digits, since they are not in a row the regex doesn't match.",
+      "challenge": "Write a Regular Expression that checks if the given text ends with any digit.",
+      "valid": ["1", "asc ascas cas 7", "nasf as lfnkalsf 0", "m\na 1\nasdasd2", "Chemistry 101"],
+      "invalid": ["", "1asd", "asda\n1sfsdf", "b\n1add\n1213df", "123 "]
+    },
+    {
+      "title": "Quantifiers",
+      "description": "Sometimes we want to check if a pattern is repeating a certain amount of times or between a min and max amount of times, for that we use the <code>{min,max}</code> pattern also known as <strong>Quantifiers</strong>. So, <code>{2,4}</code> would check that the preceding pattern is at least of length 2 (inclusive) and at most length 4 (inclusive).\n<strong>Example:</strong> <code>\"a{3,6}\"</code> is a regular expression that only matches a given text if it has 3-6 <code>a</code>'s in a row. So the text <code>\"Blah Blah Blaaah!\"</code> matches since it contains <code>\"aaa\"</code>. On the other hand <code>\"Blah Blah Blah!\"</code> doesn't match since it doesn't contain more than one a in a row.\nIf we only care about the min we can do so by removing the max (but leaving the comma), so <code>\"a{7,}\"</code> checks that there are 7 <code>a</code>'s in a row at least. If we want an exact number of occurrences we remove the comma too, so <code>\"a{5}\"</code> checks that there are 5 <code>a</code>'s in a row exactly.\n<ul><li>For <code>a{0,}</code> there is a shorthand using a <code>*</code> which means any amount of the preceding pattern.</li><li>For <code>a{1,}</code> there is a shorthand using a <code>+</code> which means one or more of the preceding pattern.</li><li>For <code>a{0,1}</code> there is a shorthand using a <code>?</code> which means zero or one of the preceding pattern.</li></ul>\n<strong>Example:</strong> <code>\"^a+c*b+$\"</code> is a regular expression that only matches a given text if it begins with one or more <code>a</code>'s immediately followed by any number of <code>c</code>'s (including zero) and then immediately followed and ending by one or more <code>b</code>'s. Texts that match the pattern would be <code>\"ab\"</code>, <code>\"aaaaaaaaaccccbbb\"</code>, <code>\"acccccccccccccbbb\"</code>.... Text that don't match would be <code>\"abc\"</code> (<code>c</code>'s must come before <code>b</code>'s), <code>\"ac\"</code> (must have at least one <code>b</code>), <code>\"cccccccbbbbbbb\"</code> (must have at least one <code>a</code>).",
+      "challenge": "Write a Regular Expression that checks if the given text contains a <strong>valid telephone number</strong>:\n<ol><li>always starts with a zero</li><li>has dashes after the first three digits and the next three digits</li><li>has 10 digits altogether</li></ol>\nan example of a valid telephone number is <code>052-123-1234</code>.",
+      "valid": ["052-000-0000", "053-452-1234", "056-999-9999", "052-052-5202", "057-000-0000"],
+      "invalid": ["0121313131", "052-123-123", "123-123-1234", "123-121", "050-123-123A"]
+    },
+    {
+      "title": "Alternations",
+      "description": "If we have several patterns we want to match we can use the pipe <code>|</code> to match the different patterns, this is known as an <stromg>Alternation</strong>.\n<strong>Example:</strong> <code>\"Mr Meseeks|Look at me\"</code> will match any text that contains <code>Mr Meseeks</code> or contains <code>Look at me</code>.\nIn order to add an Alternation for only a small pattern within the regex we can use grouping (which we will elaborate on its awesome powers in the following chapters) by wrapping our pattern in parentheses <code>()</code>.\n<strong>Example:</strong> <code>\"^b(o|ar)b$\"</code> will match only two texts <code>\"bob\"</code> and <code>\"barb\"</code>, the beginning <code>b</code> and the ending <code>b</code> are not part of the Alternation since only the <code>o|ar</code> are in the group.",
+      "challenge": "Write a Regular Expression that checks if the given text contains a reference to <code>guy varzager</code> or <code>guy segev</code>, in order to shorten the regex you can use a group.",
+      "valid": ["guy varzager gifs", "guy segev", "guy segev win"],
+      "invalid": ["guy warzager gifs", "guy segzager", "moo", "var", "Guy!", "segev guy", "segev varzager"]
+    },
+    {
+      "title": "Character Set",
+      "description": "In order to match any of several different characters we can use Alternations <code>a|b|c|d|e</code> but a better way to do this would be to use a <strong>Character Set</strong>. <code>[abcde]</code> matches any of the letters within the Set <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code> or <code>e</code>.\n<ul><li><code>[a-g]</code> is shorthand for writing all the letters between <code>a</code> and <code>g</code>.</li><li><code>[a-z]</code> is how we would match any lowercase character and <code>[A-Z]</code> any uppercase character.</li><li><code>[a-zA-Z0-9_]</code> is the equivalent of using the <code>\\w</code> Character Class that we saw in <a href=\"?chapter=2\">chapter 3</a>.</li></ul>\n<strong>Example:</strong> <code>\"[a-eA-E]\"</code> will match any text that contains any of the letters between <code>a</code> and <code>e</code> uppercase or lowercase. So it would match <code>\"A zoo\"</code> (because of the <code>A</code>) but wouldn't match <code>\"this zoo\"</code> (since it has none of the letters between <code>a</code> and <code>e</code>).\n",
+      "challenge": "Write a Regular Expression that only matches a word (containing uppercase and lowercase letters only) of length of at least 3 and at most 10 <strong>or</strong> a valid number of length 3 (valid numbers have no leading zeros)",
+      "valid": ["abc", "buzzworthy", "worry","123", "934"],
+      "invalid": ["", "ab", "abcabcabcab", "021", "abc1b"]
+    },
+    {
+      "title": "Flags",
+      "description": "Patterns can have <strong>Flags</strong> attached to them in order to alter the way the match is calculated.\nIn <i>Javascript</i> flags are appended after the last slash. Each flag is one letter added to the end of the regular expression, so to use the <code>m</code> flag we would write <code>/a|b/m</code>. We can also append several for example <code>/a|b/gms</code>.\nSome available flags:\n<ul><li><code>i</code> - case-insensitive pattern matching</li><li><code>g</code> - global matching, will return all matches and not just the first</li><li><code>m</code> - multiline mode, changes <code>^</code> and <code>$</code> to match the beginning and ending of a line and not just of the entire text</li><li><code>s</code> - Makes the <code>.</code> <i>Character Class</i> match all characters including <code>\\n</code></li></ul>\n<a href=\"https://www.codeguage.com/courses/regexp/flags\" target=\"_blank\">read more about flags</a>.\n<strong>Example:</strong> <code>/^m.m$/s</code> matches <code>\"mom\"</code>, <code>\"mam\"</code>, <code>\"mem\"</code>, <code>\"m m\"</code>, <code>\"m%m\"</code>, <code>\"m\\nm\"</code>. notice that <code>/^m.m$/</code> (without the <code>s</code> flag) matches everything but <code>\"m\\nm\"</code>.",
+      "challenge": "Write a Regular Expression that only matches text containing a line that begins with <code>x</code> or <code>X</code> and ends with <code>q</code> or <code>Q</code> and all other characters in the line are <code>c</code> or <code>C</code>",
+      "valid": ["xq", "xcccccccccq","xCCcccccCcCcccQ", "XcCCCcCcq\nqcx", "xcq"],
+      "invalid": ["x Cq", "xcqa", "qxxxxxxxxc", "moo xq", "a\nqcx\nb"]
+    },
+    {
+      "title": "Negative Character Set",
+      "description": "In order to not match a set of characters we can use a Negative Character Set. This can be done by adding a ^ in the beginning of a Character Set. <code>[^abc]</code> means any character that is not <code>a</code>, <code>b</code> or <code>c</code>.\n<strong>Example:</strong> <code>\"^a[^0-9]c$\"</code> matches <code>\"abc\"</code>, <code>\"a+c\"</code>, <code>\"a|c\"</code>, <code>\"axc\"</code>, <code>\"aac\"</code>, <code>\"a{c\"</code> but doesn't match <code>\"a0c\"</code>, <code>\"a1c\"...</code>.",
+      "challenge": "<stromg>(<strong>Moderate</strong>) Write a Regular Expression that only matches text that contains a sequence of <code>g</code>'s of an even length. The even sequence must not be contained in a longer sequence of odd amount of <code>g</code>'s.",
+      "valid": ["gg", "gggggg", "a gggggggg","a gg nvs bdfbg", "gggga"],
+      "invalid": ["g", "ggg", "sfs ggggg 123", "g1g1g1", ""]
+    },
+    {
+      "title": "Capture Groups",
+      "description": "We began discussing groups in <a href=\"?chapter=4\">Chapter 5</a> and here we will see one of their superpowers.\nWhen wrapping a pattern in parentheses we are using what is called a <strong>Capture Group</strong>. A capture group allows us to reference text captured by the group pattern within the regex. In order to use a captured group we use the special syntax <code>\\1</code>, <code>\\2</code>... which is a backslash followed by the Capture Group number (they are numbered from left to right starting with 1).\n<strong>Example:</strong> <code>\"([0-9])\\1\"</code> matches any text that contains two of the same digit in a row. So it would match <code>\"11\"</code>, <code>\"I have to go to the 00\"</code>, <code>\"I have 99 problems, but capturing groups ain't one\"</code> but not <code>\"1 1\"</code>, <code>\"aa\"</code>...\nIn addition, when using Capture Groups we can also use the captured text outside of the regex (in Javascript by using the <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match' target='_blank'>match function</a>), but this is out of our scope for this workshop. \nIf we want to <strong>not</strong> capture a group, we can use the <strong>Non Capture Group</strong> syntax <code>(?:a|b)</code>. This will match <code>a</code> or <code>b</code> but will not capture the group, so we can't use the <code>\\1</code> since the group wasn't captured.",
+      "challenge": "Write a Regular Expression that only matches text that contain at least three of the same character",
+      "valid": ["aaa", "abcerstuvwxyzyzy", "a@kpoq@>@", "abc\ndef\nghi\njkl", "WubbaLubaDbDb"],
+      "invalid": ["abcdefghijklmnop", "!%mMM", "AaABbBCcC", "Rick and Morty", ""]
+    },
+    {
+      "title": "Positive Lookaround",
+      "description": "When using patterns to match text we actually \"use up\" the characters that were matched, and so we can't use them again if we want to check more than one thing on specific characters.\n<strong>Example:</strong> if we want to test if the given text matches <code>a.*0.*2.*b</code> but also matches <code>a.*1.*3.*b</code> we can't do this easily since we don't know where the <code>0</code> and <code>2</code> are compared to the <code>1</code> and <code>3</code>. So if we were to write <code>\"a.*0.*2.*1.*3.*b\"</code> we would miss out on texts like <code>\"a0123b\"</code>.\nIn the previous example, we could have alternated all the different permutations but that would be very long. Our main issue is that once we write <code>a.*0.*2.*b</code> we've used up our <code>a0123b</code> and can't match it on the second pattern we have.\nPositive Lookahead allows you to pattern match without \"using up\" the characters. Wrapping a pattern with</code>(?=)</code> allows us to reuse the matched text in subsequent patterns.\n<strong>Example:</strong> in order to match <code>a.*0.*2.*b</code> and also match <code>a.*1.*3.*b</code> we can do <code>\"(?=a.*0.*2.*b)a.*1.*3.*b\"</code>. This makes sure that the text contains text matching <code>a.*0.*2.*b</code> without \"using it up\" allowing the second match <code>a.*1.*3.*b</code> to also return true.\n\nThere is also a Positive Lookbehind that works similarly but looking back at characters we already \"used up\" <code>(?<=)</code>.\n\n<strong>Positive Lookaround</strong> is the collective name of Positive Lookahead and Positive Lookbehind.",
+      "challenge": "Write a Regular Expression that only matches a number with only odd digits that has at least one 5 digit (this can be done also without Positive Lookahead but would result in a longer regex)",
+      "valid": ["1333377795", "5", "75", "55555", "95999931959"],
+      "invalid": ["a5", "5 ", "137137173739", "25", "5899999999"]
+    },
+    {
+      "title": "Positive Lookaround",
+      "description": "Similar to Positive Lookahead, Negative Lookahead allows you to check that a pattern <strong>does not</strong> match but doesn't \"use up\" the characters. Wrapping a pattern with <code>(?!)</code> allows to reuse the matching text in subsequent patterns.\n<strong>Example:</strong> <code>\"^(?!a\\d\\dc)a..c$\"</code> matches all text beginning with <code>a</code> and ending with <code>c</code> with two characters in the middle that the both can't be digits (but each can be separately. This would match <code>\"abbc\"</code>, <code>\"a%!c\"</code>, <code>\"a1bc\"</code>, <code>\"ab1c\"..</code> but not match <code>\"a00c\", \"a91c\"...</code>.\nThere is also a Negative Lookbehind that works similarly but looking back at characters we already \"used up\" <code>(?&lt!)</code>.\n<strong>Negative Lookaround</strong> is the collective name of Negative Lookahead and Negative Lookbehind.\n<a href=\"https://www.regular-expressions.info/lookaround.html\" target=\"_blank\">Read more about Positive and Negative Lookbehinds</a>",
+      "challenge": "(<strong>HARD</strong>) Write a Regular Expression that only matches a given text if it doesnt contain the same letter twice in a row",
+      "valid": ["abcab", "*&*", "!%mM", "Rick and Morty", ""],
+      "invalid": ["**", "opopopoplla asds", "zz", "WubbaLubaDub", "1\t\t9"]
+    },
+    {
+      "title": "Password Challenge",
+      "challenge": "(<strong>Moderate</strong>) Write a Regular Expression that only Validates a Password with the following rules\n<ul><li>Has at least one uppercase letter</li><li>Has at least one lowercase letter</li><li>Has at least one digit</li><li>Has at least one special character: <code>@#$!**</code></li><li>Is of length 8 - 16</li></ul>",
+      "valid": ["Password1!", "A1@cd8k!", "AbCd12#4", "AbCd12#4AbCd12$4", "FR33wifi$"],
+      "invalid": ["Pa1!", "Password!", "Password1", "Password1!Passwor", "changeme"]
+    },
+    {
+      "title": "Palindrome",
+      "challenge": "(<strong>Moderate</strong>) Write a Regular Expression that only matches <a href=\"https://en.wikipedia.org/wiki/Palindrome#:~:text=A%20palindrome%20is%20a%20word,such%20as%20madam%20or%20racecar.\" target=\"_blank\">Palindromes</a> of length 4-5",
+      "valid": ["abcba", "jjjjj", "klolk", "zkmkz", "abba"],
+      "invalid": ["abcab", "aba", "aaaaaaa", "abcde", "ababab"]
+    },
+    {
+      "title": "Prime",
+      "challenge": "(<strong>Super Hard</strong>) Write a Regular Expression that checks if a given text is exactly a sequence of x's that is of length that is a prime number",
+      "valid": ["xx", "xxx", "xxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
+      "invalid": ["xxxx", "xxxxxx", "xxxxxxxx", "xxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
+
+    }
+  ]
+}
