@@ -373,13 +373,17 @@ button.previous {
     }
     .description {
         font-size:12px;
+        padding: 0 20px;
     }
     .goto-challenge {
         display: block;
         position: absolute;
-        bottom: 10px;
+        bottom: 60px;
         left: 50%;
         transform: translate(-50%);
+        font-size: 14px;
+        padding: 20px;
+        outline-radius: 10px;
 
     }
     .challenge-mode .goto-challenge {

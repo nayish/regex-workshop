@@ -1,21 +1,5 @@
 const workshopPromise = fetch('./workshop.json');
 
-const positions = [
-    [256, 5],
-    [76, 15],
-    [236, 45],
-    [86, 55],
-    [251, 85],
-    [81, 95],
-    [246, 125],
-    [86, 135],
-    [256, 165],
-    [76, 175],
-];
-
-const left = [4, 7, 8, 2, 1, 3, 6, 0, 5, 9];
-const center = [6, 1, 9, 0, 2, 5, 7, 4, 3, 8];
-const right = [1, 2, 9, 7, 4, 3, 8, 0, 6, 5];
 let phrasesContainer;
 let inputElement;
 let titleElement;
@@ -23,7 +7,6 @@ let descriptionElement;
 let challengeElement;
 let challengeContainerElement;
 let nextElement;
-let nextTopElement;
 let previousElement;
 let chapterNumberElement;
 let nodes = [];
@@ -33,7 +16,9 @@ let phrases;
 let chapters;
 let currentValue;
 let currentChapter;
-let lesson;
+let lessonTitle;
+let gotoButton;
+let body;
 window.onload= async () => {
     const urlParams = new URLSearchParams(window.location.search);
     currentChapter = +urlParams.get('chapter') ?? 0;
@@ -47,7 +32,8 @@ window.onload= async () => {
     nextElement = document.querySelector('.next');
     previousElement = document.querySelector('.previous');
     chapterNumberElement = document.querySelectorAll('.chapter-number');
-    lesson = document.querySelector('.lesson');
+    lessonTitle = document.querySelector('.lesson h1');
+    gotoButton = document.querySelector('.goto-challenge');
     body = document.querySelector('body');
 
     const workshop = await (await workshopPromise).json();
@@ -78,9 +64,15 @@ window.onload= async () => {
         setChapter({withoutPush: true});
     });
 
-    lesson.onclick = () => {
+    lessonTitle.onclick = () => {
         if (chapters[currentChapter].description) {
-            body.classList.toggle('challenge-mode');
+            body.classList.remove('challenge-mode');
+        }
+    }
+
+    gotoButton.onclick = () => {
+        if (chapters[currentChapter].description) {
+            body.classList.add('challenge-mode');
         }
     }
 }
@@ -113,9 +105,6 @@ function save() {
     localStorage.setItem('challengeSolutions', JSON.stringify(arr));
 }
 
-
-const columns = [left, center, right];
-
 function mapToPhraseNode({phrase, index, column, isValid}) {
     const node = document.createElement("div");
     if (phrase.length > 16) {
@@ -126,10 +115,6 @@ function mapToPhraseNode({phrase, index, column, isValid}) {
     node.innerText = phrase;
     node.className = `phrase ${isValid? 'valid' : 'invalid'} phrase-${index}`;
     return node;
-}
-
-function getPosition({index, column}) {
-    return `left: ${(positions[columns[column][index]][0] - 65) + 334*column}px; top: ${positions[columns[column][index]][1]}px;`;
 }
 
 function setChapter({withoutPush} = {}) {
@@ -148,6 +133,12 @@ function setChapter({withoutPush} = {}) {
     const {title, description, challenge, valid, invalid} = chapters[currentChapter];
 
     chapterNumberElement.forEach(a => a.innerText = `${currentChapter + 1}`);
+
+    if (chapters[currentChapter].description) {
+        body.classList.remove('challenge-mode')
+    } else {
+        body.classList.add('challenge-mode')
+    }
 
     titleElement.innerText = title;
     descriptionElement.innerHTML = '';
@@ -181,7 +172,6 @@ function setCurrentValue(value) {
     } catch {
         hasError = true;
     }
-    console.log(r);
 
     if (!regex || hasError) {
         hasCompleted = false;
@@ -191,11 +181,6 @@ function setCurrentValue(value) {
         });
         setState();
         return;
-    }
-    if (chapters[currentChapter].description) {
-        body.classList.remove('challenge-mode')
-    } else {
-        body.classList.add('challenge-mode')
     }
     const values = phrases.map(({phrase, isValid}, index) => {
         const pass = r.test(phrase);
